@@ -212,12 +212,12 @@ export const siteSettings = {
       //   icon: 'AttributeIcon',
       //   permissions: adminAndOwnerOnly,
       // },
-      {
-        href: (shop: string) => `/${shop}${Routes.reviews.list}`,
-        label: 'sidebar-nav-item-reviews',
-        icon: 'ReviewIcon',
-        permissions: adminAndOwnerOnly,
-      },
+      // {
+      //   href: (shop: string) => `/${shop}${Routes.reviews.list}`,
+      //   label: 'sidebar-nav-item-reviews',
+      //   icon: 'ReviewIcon',
+      //   permissions: adminAndOwnerOnly,
+      // },
       {
         href: (shop: string) => `/${shop}${Routes.question.list}`,
         label: 'sidebar-nav-item-questions',
