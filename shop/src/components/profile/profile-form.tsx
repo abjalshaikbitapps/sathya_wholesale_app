@@ -64,11 +64,11 @@ const ProfileForm = ({ user }: { user: User }) => {
               </div>
               <div className="mb-8">
               <label className="block mb-3 text-sm font-semibold leading-none text-body-dark">Business license</label>
-                <FileInput control={control} name="business_license" isImg={false} />
+                <FileInput control={control} name="business_license" isImg={false} pdf={user?.business_license} />
               </div>
               <div className="mb-8">
               <label className="block mb-3 text-sm font-semibold leading-none text-body-dark">Tobacco license</label>
-                <FileInput control={control} name="tobacco_license"  isImg={false}/>
+                <FileInput control={control} name="tobacco_license"  isImg={false} pdf={user?.tobacco_license}/>
               </div>
               {(user?.business_license!=null)?
               (

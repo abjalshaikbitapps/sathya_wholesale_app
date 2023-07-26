@@ -4,6 +4,8 @@ import { useTranslation } from 'next-i18next';
 import { UploadIcon } from '@/components/icons/upload-icon';
 import Spinner from '@/components/ui/loaders/spinner/spinner';
 import { useUploads } from '@/framework/settings';
+import Image from 'next/image';
+import { pdfPlaceholder } from '@/lib/placeholders';
 export default function Uploader({
   onChange,
   value,
@@ -11,6 +13,7 @@ export default function Uploader({
   onBlur,
   multiple = false,
   isImg,
+  pdf
 }: any) {
   const { t } = useTranslation('common');
   const {
@@ -45,14 +48,70 @@ export default function Uploader({
   // ],
   // excludeAcceptAllOption: true,
   // multiple: false
-  const thumbs = files.map((file: any, idx) => (
+ var previews:any =[]
+
+//  for (let i=0;i<files.length;i++){
+//   const userfile =files[i];
+//   var filesuser=files[i]
+//   const fileExtension = userfile.name.split('.').pop()?.toLowerCase();
+//   if(fileExtension === 'pdf'){
+    
+//     previews.push(
+//       {
+//         preview:filesuser.preview
+//       }
+
+//     )
+//   }
+//  }
+  const tsupfiles=files.map((file:any,idx)=>{
+         console.log(file.preview);
+        
+  
+  const fileExtension = file?.preview?.split('.');
+  if(fileExtension)
+  {
+    if(fileExtension[1] == 'jpg'||fileExtension[1] == 'png'||fileExtension[1] == 'svg'){
+    
+      previews.push(
+        {
+          preview:file?.preview,
+          isPdf:false,
+          name:file?.name
+        }
+  
+      )
+    }
+    else
+    {
+      
+      previews.push(
+        {
+          preview:pdf,
+          isPdf:true,
+          name:file?.name
+        })
+    }
+  }
+  else
+  {
+    previews.push(
+      {
+        preview:pdf,
+        isPdf:true,
+       
+      })
+  }
+  }
+  );
+  const thumbs = previews.map((file: any, idx:any) => (
     <div
       className="relative mt-2 inline-flex flex-col overflow-hidden rounded border border-border-100 ltr:mr-2 rtl:ml-2"
       key={idx}
     >
       <div className="flex h-16 w-16 min-w-0 items-center justify-center overflow-hidden">
         {/* eslint-disable */}
-        <img src={file.preview} alt={file?.name} />
+        {file?.isPdf!=true ? <img src={file.preview} alt={file?.name} /> : <div ><Image src={pdfPlaceholder} layout="fixed" width={42} height={42} className="overflow-hidden rounded" alt="pdf" onClick={(ev)=>{window.open(file?.preview,'_blank')}}/></div>}
       </div>
     </div>
   ));

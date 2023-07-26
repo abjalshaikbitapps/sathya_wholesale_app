@@ -6,16 +6,17 @@ interface FileInputProps {
   name: string;
   multiple?: boolean;
   isImg?: boolean;
+  pdf?:string;
 }
 
-const FileInput = ({ control, name, multiple, isImg }: FileInputProps) => {
+const FileInput = ({ control, name, multiple, isImg, pdf }: FileInputProps) => {
   return (
     <Controller
       control={control}
       name={name}
       defaultValue={[]}
       render={({ field: { ref, ...rest } }) => (
-        <Uploader {...rest} multiple={multiple} isImg={isImg} />
+        <Uploader {...rest} multiple={multiple} isImg={isImg} pdf={pdf} />
       )}
     />
   );
