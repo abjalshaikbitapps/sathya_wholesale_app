@@ -1,0 +1,526 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /*
+    *
+    * This all are the rgb values which are used inside the
+    * tailwind config file and custom plugins css file
+    *
+    */
+
+    /*
+    * primary color
+    */
+    --color-accent:0, 136, 255;
+
+    /*
+    * Hover state color of primary color
+    */
+    --color-accent-hover: 1, 147, 241;
+
+    /*
+    * shade of primary color
+    */
+    --color-accent-200: 181, 238, 255;
+
+    /*
+    * shade of primary color
+    */
+    --color-accent-300: 131, 230, 255;
+
+    /*
+    * shade of primary color
+    */
+    --color-accent-400: 72, 213, 255;
+
+    /*
+    * shade of primary color
+    */
+    --color-accent-500: 30, 184, 255;
+
+    /*
+    * shade of primary color
+    */
+    --color-accent-600: 6, 156, 255;
+
+    /*
+    * shade of primary color
+    */
+    --color-accent-700: 0, 136, 255;
+
+
+    /*
+    * light color
+    */
+    --color-light: 255, 255, 255;
+
+    /*
+    * dark color
+    */
+    --color-dark: 0, 0, 0;
+
+    /*
+    * Black muted color
+    */
+    --color-muted-black: 17, 17, 17;
+
+    /*
+    * Current color
+    */
+    --color-current: currentColor;
+
+    /*
+    *
+    * TEXT colors
+    *
+    */
+
+    /*
+    * text color used for body/base text -> gray-500
+    */
+    --text-base: 107, 114, 128;
+
+    /*
+    * dark base text color  -> gray-600
+    */
+    --text-base-dark: 75, 85, 99;
+
+    /*
+    * muted text color -> gray-400
+    */
+    --text-muted: 156, 163, 175;
+
+    /*
+    * light muted text color - gray-300
+    */
+    --text-muted-light: 209, 213, 219;
+
+    /*
+    * text color used for heading text -> gray-700
+    */
+    --text-sub-heading: 55, 65, 81;
+
+    /*
+    * text color used for heading text -> gray-800
+    */
+    --text-heading: 31, 41, 55;
+
+    /*
+    * text color used for heading text -> gray-900
+    */
+    --text-bolder: 31, 41, 55;
+
+    /*
+    *
+    * border colors
+    *
+    */
+
+    /*
+    * border color 50
+    */
+    --color-border-50: 249, 250, 251;
+
+    /*
+    * border color 100
+    */
+    --color-border-100: 243, 244, 246;
+
+    /*
+    * border color 200
+    */
+    --color-border-200: 229, 231, 235;
+
+    /*
+    * border base color which is 300
+    */
+    --color-border-base: 209, 213, 219;
+
+    /*
+    * border color 400
+    */
+    --color-border-400: 156, 163, 175;
+
+    /*
+    *
+    * Tailwind default gray color override
+    *
+    */
+
+    /*
+    * gray-50
+    */
+    --color-gray-50: 249, 250, 251;
+
+    /*
+    * gray-100
+    */
+    --color-gray-100: 254, 255, 255;
+
+    /*
+    * gray-200
+    */
+    --color-gray-200: 229, 231, 235;
+
+    /*
+    * gray-300
+    */
+    --color-gray-300: 209, 213, 219;
+
+    /*
+    * gray-400
+    */
+    --color-gray-400: 156, 163, 175;
+
+    /*
+    * gray-500
+    */
+    --color-gray-500: 107, 114, 128;
+
+    /*
+    * gray-600
+    */
+    --color-gray-600: 75, 85, 99;
+
+    /*
+    * gray-700
+    */
+    --color-gray-700: 55, 65, 81;
+
+    /*
+    * gray-800
+    */
+    --color-gray-800: 31, 41, 55;
+
+    /*
+    * gray-900
+    */
+    --color-gray-900: 31, 41, 55;
+
+    /*
+    * orange-50
+    */
+    --color-orange-50: 255, 247, 237;
+
+    /*
+    * orange-100
+    */
+    --color-orange-100: 255, 237, 213;
+
+    /*
+    * orange-200
+    */
+    --color-orange-200: 254, 215, 170;
+
+    /*
+    * orange-300
+    */
+    --color-orange-300: 253, 186, 116;
+
+    /*
+    * orange-400
+    */
+    --color-orange-400: 251, 146, 60;
+
+    /*
+    * orange-500
+    */
+    --color-orange-500: 249, 115, 22;
+
+    /*
+    * orange-600
+    */
+    --color-orange-600: 234, 88, 12;
+
+    /*
+    * orange-700
+    */
+    --color-orange-700: 194, 65, 12;
+
+    /*
+    * orange-800
+    */
+    --color-orange-800: 154, 52, 18;
+
+    /*
+    * orange-900
+    */
+    --color-orange-900: 124, 45, 18;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-body;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+
+  a {
+    @apply no-underline;
+  }
+}
+@import './custom-plugins.css';
+.bg-br{
+ border: solid 1px #e5e5e5;
+ /* background-color: #c0c0c0; */
+            /* border-radius: 6px; */
+            object-fit: fill !important;
+}
+.ml-p{
+  margin-left: 3px;
+}
+@media only screen and (max-width: 1280px) {
+  .banner-img{
+    width: 500px !important;
+    height: 350px !important;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .banner-img{
+    width: 600px !important;
+    height: 450px !important;
+  }
+  .card-h{
+    height: 145px ;
+        background-size: cover;
+  }
+  .h-set{
+    height: 65vh !important;
+  }
+}
+@media only screen and (max-width: 1700px) {
+  .banner-img{
+    width: 900px;
+    height: 750px;
+  }
+}
+@media only screen and (max-width: 2400px) {
+  .banner-img{
+    width: 1050px ;
+    height: 750px ;
+  }
+  .h-set{
+    height: 65vh !important;
+  }
+}
+@media only screen and (max-width: 420px) and (min-width: 350px)  {
+  .banner-img{
+    width: 370px !important;
+    height: 350px !important;
+  }
+  .uniqueCart{
+    position: absolute;
+    bottom: 49px !important;
+    right: 47px;
+    background: #000000;
+    padding: 0px 4px;
+    border-radius: 50px;
+    font-size: 10px;
+    color: white; 
+  }
+  .uniqueWishlist{
+  position: absolute;
+  bottom: 49px !important;
+      right: 84px;
+    background: #000000;
+    padding: 0px 4px;
+    border-radius: 50px;
+    font-size: 10px;
+    color: white;  
+  }
+.bg-br{
+border-radius: 0px !important;
+}
+.xs-pop-card{
+  width: 235px;
+}
+
+}
+@media only screen and (max-width: 1022px) and (min-width: 421px)  {
+  .uniqueCart{
+    position: absolute;
+    bottom: 23px !important;
+    right: 11px;
+    background: #000000;
+    padding: 0px 4px;
+    border-radius: 50px;
+    font-size: 10px;
+    color: white; 
+  }
+  .uniqueWishlist{
+  position: absolute;
+  bottom: 23px !important;
+  right: 48px;
+    background: #000000;
+    padding: 0px 4px;
+    border-radius: 50px;
+    font-size: 10px;
+    color: white;  
+  }
+  }
+@media only screen and (max-width: 1921px) and (min-width: 1024px)  {
+.uniqueCart{
+  position: absolute;
+  bottom: 22px;
+  right: 26px;
+  background: #000000;
+  padding: 0px 4px;
+  border-radius: 50px;
+  font-size: 10px;
+  color: white;  position:absolute;
+}
+.uniqueWishlist{
+position: absolute;
+  bottom: 22px;
+  right: 65px;
+  background: #000000;
+  padding: 0px 4px;
+  border-radius: 50px;
+  font-size: 10px;
+  color: white;  position:absolute;
+}
+.xl-hide{
+  display: block !important;
+}
+}
+@media only screen and (max-width: 1921px) and (min-width: 1401px)  {
+   .card-h{
+    height: 245px !important;
+        background-size: cover;
+  }
+}
+@media only screen and (max-width: 1619px) and (min-width: 421px)  {
+.category-submenu{
+  overflow-x: scroll !important;
+}
+}
+.client-inners {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 6px;
+    background: #ffffff;
+    border-radius: 500px;
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 2px 3px 2px rgb(0 0 0 / 9%);
+}
+
+.categorie-header{
+  background-color: #1e3a8a;
+  color: whitesmoke;
+}
+.m-right li a{
+margin-right: 30px;
+}
+.row-reverse{
+  flex-direction: row-reverse;
+}
+.section-scroll {
+  display: flex;
+  overflow-x: auto; 
+    scroll-snap-type: x;
+    }
+    .scroll-item {
+    scroll-snap-align: start;
+    width: 100%;
+    white-space: nowrap;
+    }
+
+    .thank-you{
+      display: inline-flex;
+      color: #8ce98f;
+    }
+    .swiper-container {
+      width: 480px;
+    }
+    
+    @media screen and (min-width: 640px) {
+      .swiper-container {
+        width: 640px;
+      }
+    }
+    
+    @media screen and (min-width: 768px) {
+      .swiper-container {
+        width: 768px;
+      }
+    }
+    .displa{
+      display: contents !important;
+    }
+    @media only screen and (max-width: 768px) and (min-width: 300px)  {
+      .banner-img2{
+        width: 95vw !important;
+        background-color: lightgray;
+      }
+      .banner-img5{
+        width: 95vw !important;
+        background-color: white;
+      }
+      .banner-mock{
+            width: 85vw !important;
+      }
+      .xl-hide{
+        display: none !important;
+      }
+    }
+    @media only screen and (max-width: 1024px) and (min-width: 769px)  {
+      .banner-img2{
+        width: 100vw !important;
+        background-color: lightgray;
+      }
+      .banner-img5{
+        width: 95vw !important;
+        background-color: white;
+      }
+      .banner-mock{
+        width: 85vw !important;
+  }
+    }
+    @media only screen and (max-width: 1512px) and (min-width: 1025px)  {
+      .banner-img2{
+        width: 77vw !important;
+        background-color: lightgray;
+      }
+      .banner-img5{
+        width: 74vw !important;
+        background-color: white;
+      }
+      .banner-mock{
+        width: 80vw !important;
+  }
+    }
+    @media only screen and (max-width: 3000px) and (min-width: 1513px)  {
+      .banner-img2{
+        width: 80vw !important;
+        background-color: lightgray;
+      }
+      .banner-img5{
+        width: 80vw !important;
+        background-color: white;
+      }
+      .banner-mock{
+        width: 82vw !important;
+  }
+  .xl-hide{
+    display: block !important;
+  }
+    }
